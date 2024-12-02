@@ -4,6 +4,23 @@ import seaborn as sns
 import pandas as pd
 
 
+def positive_negative_distribution_bar(time_data, negative_data, positive_data, width, title:str):
+  """Create bar charts to visualize distribution between positive vs. negative Flair Twitter sentiment data."""
+  plt.figure(figsize=(15, 6))
+
+  plt.bar(time_data, negative_data, width, alpha=0.7, label='Negative')
+  plt.bar(time_data, positive_data, width, bottom=negative_data, color='purple', alpha=0.7, label='Positive')
+
+  plt.title(title, fontsize=20)
+  plt.xlabel('Time')
+  plt.ylabel('Count')
+  plt.legend()
+
+  plt.gcf().autofmt_xdate()
+  plt.tight_layout()
+  plt.show()
+
+
 def sentiment_price_scatter(
   price, sentiment_1, sentiment_2,
   title_1:str, x_label_1:str, y_label_1:str,
@@ -12,7 +29,7 @@ def sentiment_price_scatter(
   """Create scatter charts to visualize correlation between prices vs. sentiment data."""
 
   f, ax = plt.subplots(1, 2, figsize=(15, 6))
-  
+
   ax[0].scatter(price, sentiment_1)
   ax[0].set_xlabel(x_label_1)
   ax[0].set_ylabel(y_label_1)
@@ -25,7 +42,6 @@ def sentiment_price_scatter(
 
   plt.gcf().autofmt_xdate()
   plt.tight_layout()
-  plt.legend()
   plt.show()
 
 

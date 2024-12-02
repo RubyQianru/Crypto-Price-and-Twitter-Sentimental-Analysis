@@ -12,6 +12,7 @@ def sentiment_price_scatter(
   """Create scatter charts to visualize correlation between prices vs. sentiment data."""
 
   f, ax = plt.subplots(1, 2, figsize=(15, 6))
+  
   ax[0].scatter(price, sentiment_1)
   ax[0].set_xlabel(x_label_1)
   ax[0].set_ylabel(y_label_1)

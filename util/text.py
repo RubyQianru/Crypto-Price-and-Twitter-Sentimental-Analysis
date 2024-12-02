@@ -26,14 +26,3 @@ def vader_sentiment(input:str):
   else:
     print("String is empty. No result.")
     return 
-
-
-# def clean_text(input:any):
-#   if isinstance(text, str):
-#     # Extract link values from the **text** column with regex.
-#     text = re.sub(r'https?://\S+', '', text)
-#     # Remove all "\n" from the **text** column.
-#     text = text.replace('\n', '')
-#     return text.strip()
-#   else:
-#     return text

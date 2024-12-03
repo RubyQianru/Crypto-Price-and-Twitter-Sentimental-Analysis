@@ -207,3 +207,17 @@ def plot_technical_analysis(df, include_patterns=False):
   
   plt.tight_layout()
   return fig
+
+def plot_correlations(correlations, title:str = "Correlation of Features with Price "):
+  """Create correlations bar chart"""
+  plt.figure(figsize=(15, 25))
+
+  plt.subplot(5, 1, 5)
+  price_correlations = correlations.sort_values(ascending=False)
+  price_correlations.plot(kind='bar', color='teal', width=0.8)
+  plt.title(title, fontsize=16)
+  plt.xlabel('Features', fontsize=14)
+  plt.ylabel('Correlation Coefficient', fontsize=14)
+  plt.tight_layout()
+
+  plt.show()

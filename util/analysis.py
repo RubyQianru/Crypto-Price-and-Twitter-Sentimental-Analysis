@@ -84,3 +84,11 @@ def detect_patterns(df):
     df['Hammer'] = (lower_wick > (2 * body)) & (upper_wick < body)
     
     return df
+
+
+def calculate_correlation(x, y):
+    """Calculate correlation coefficient value."""
+    correlation_matrix = np.corrcoef(x, y)
+    correlation_coefficient = correlation_matrix[0, 1]
+
+    return correlation_coefficient

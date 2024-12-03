@@ -13,7 +13,7 @@ def analyze_returns(daily_data):
   df_rolling = df_rolling.dropna()
   
   # Calculate bounds
-  N_SIGMAS = 1.5
+  N_SIGMAS = 2
   df_rolling["upper"] = df_rolling["mean"] + N_SIGMAS * df_rolling["std"]
   df_rolling["lower"] = df_rolling["mean"] - N_SIGMAS * df_rolling["std"]
   
@@ -81,7 +81,7 @@ def detect_patterns(df):
     # Hammer pattern
     upper_wick = df['dayHigh'] - df[['open', 'close']].max(axis=1)
     lower_wick = df[['open', 'close']].min(axis=1) - df['dayLow']
-    df['Hammer'] = (lower_wick > (2 * body)) & (upper_wick < body)
+    df['Hammer'] = (lower_wick > (1.5 * body)) & (upper_wick < body)
     
     return df
 

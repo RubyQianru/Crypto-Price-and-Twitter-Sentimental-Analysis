@@ -26,7 +26,7 @@ Data is sourced using Jenkins task run on a remote server. The server runs data 
 - Bitcoin data is sourced from public available real-time crypto price API.
 - Twitter data ia sourced from public available Twitter API.
 
-### Conclusions
+## Conclusions
 
 In this project, we load and process the dataset of Bitcoin price and Twitter Sentiment and try to find what features contribute to the target Bitcoin prices. Based on the ML training result, we come to the conclusion that historical price, sentiment and technical indicators all contribute partly to the movement of target price.
 
@@ -36,7 +36,7 @@ In this project, we load and process the dataset of Bitcoin price and Twitter Se
 
 While historical price and technical indicators are straightforward to compute, sentiment analysis offers unique opportunities to uncover potential alpha by analyzing public opinions from diverse sources.
 
-### Next Steps
+## Next Steps
 
 - Expand the dataset: Incorporate a longer time period with more data to improve model robustness and reduce overfitting.
 - Explore Advanced Models: Test LSTM and ARIMA models, which are designed for time-series data and can account for trend-specific patterns and lagged relationships.
